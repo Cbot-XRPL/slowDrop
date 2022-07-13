@@ -3,13 +3,13 @@ const xrpl = require('xrpl')
 //import log user func
 const logUser = require('./logUser');
 //import variables 
-const {seed,currency,issuer} = require('../config.json')
+const {seed,currency,issuer,sendingAmount,sendingMemo} = require('../config.json')
 
 //credentials if sending wallet from seed
 const wallet = xrpl.Wallet.fromSeed(seed)
 
 //memo
-const memo = Buffer.from('😈 wizard test drop !?!').toString('hex').toUpperCase()
+const memo = Buffer.from(sendingMemo).toString('hex').toUpperCase()
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -31,7 +31,7 @@ const send = async (user, counter) => {
         "currency": currency,
         "issuer": issuer,
         //airdrop amount per user
-        "value": "0.001"
+        "value": sendingAmount
       },
       "Destination": user,
       "Memos": [
