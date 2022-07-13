@@ -3,7 +3,7 @@ const xrpl = require('xrpl');
 //import module2
 const send = require('./send')
 
-      
+const {requiredHoldings,checkIssuer1,checkIssuer2,ignoreWallet} = require('../config.json')          
 
 //signal issure check 1 is done
 let run1 = false;
@@ -31,15 +31,15 @@ let test = 'your own address';
                "id": 2,
                "command": "account_lines",
                // imput the issuer your want to check for trustlines // use collection issuer for xls14 nfts
-               "account": 'your issuing address here',
+               "account": checkIssuer1,
                "ledger_index": "validated"
              })
                //filter trust lines
                response1.result.lines.forEach((line) =>{
-                // instead of 0 put in the number of tokens you want to require user to have
-                if (line.balance * -1 > 0 ){
+                // instead of 0 put in the number of tokens you want to require user to have / if doing xls14 nfts leave 0
+                if (line.balance * -1 > requiredHoldings ){
                    //exclude your holding wallet
-                    if (line.account != 'your holding wallat here'){
+                    if (line.account != ignoreWallet){
                    //builds holder list
                     holders.push(line.account) 
                     
@@ -57,13 +57,13 @@ let test = 'your own address';
                 "id": 2,
                 "command": "account_lines",
                 // imput the issuer 2 your want to check for trustlines
-                "account": 'rBj9Q1WWd4Zu4NbUn5y6Qt4PGuPertpoBm',
+                "account": checkIssuer2,
                 "ledger_index": "validated"
               })
             
               response2.result.lines.forEach( line =>{
-                 if (line.balance * -1 > 0 ){
-                     if (line.account != 'rBqsTsJA1gvaaL78oTkcqQincJ9DQ8F4Xq'){
+                 if (line.balance * -1 > requiredHoldings ){
+                     if (line.account != ignoreWallet){
                      holders.push(line.account);
                     
                      }
