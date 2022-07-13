@@ -1,0 +1,15 @@
+{
+  "name": "airdrop",
+  "version": "1.0.0",
+  "description": "xrpl airdrop bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js"
+  },
+  "author": "Cbot Labs Inc",
+  "license": "ISC",
+  "dependencies": {
+    "xrpl": "^2.3.0"
+  }
+}
