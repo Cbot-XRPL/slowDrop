@@ -14,7 +14,8 @@ holders = [];
 //count outputs
 let counter = 0;
 
-let test = 'rHuotrncXBzH72ziyYBM19UxzoFpsqGF6C';
+//use this for test sending tokens to self instead of holder list
+let test = 'your own address';
 
 // Wrap code in an async function so we can use await-------------------------------------------
            async function main() {
@@ -29,8 +30,8 @@ let test = 'rHuotrncXBzH72ziyYBM19UxzoFpsqGF6C';
            const response1 = await client.request({
                "id": 2,
                "command": "account_lines",
-               // imput the issuer your want to check for trustlines
-               "account": 'rf46TDiG7ac3EQ157aqyDutMBMqEbfFDQw',
+               // imput the issuer your want to check for trustlines // use collection issuer for xls14 nfts
+               "account": 'your issuing address here',
                "ledger_index": "validated"
              })
                //filter trust lines
@@ -38,7 +39,7 @@ let test = 'rHuotrncXBzH72ziyYBM19UxzoFpsqGF6C';
                 // instead of 0 put in the number of tokens you want to require user to have
                 if (line.balance * -1 > 0 ){
                    //exclude your holding wallet
-                    if (line.account != 'rBqsTsJA1gvaaL78oTkcqQincJ9DQ8F4Xq'){
+                    if (line.account != 'your holding wallat here'){
                    //builds holder list
                     holders.push(line.account) 
                     
@@ -50,7 +51,8 @@ let test = 'rHuotrncXBzH72ziyYBM19UxzoFpsqGF6C';
            
              
   //2/ check a diff issuer and add to holder list-------------------------------------------------------------------
-            if(run1){
+           //un comment this code if you want check more than one issuer. Most like used for xls14 nfts
+              /*      if(run1){
              const response2 = await client.request({
                 "id": 2,
                 "command": "account_lines",
@@ -67,12 +69,14 @@ let test = 'rHuotrncXBzH72ziyYBM19UxzoFpsqGF6C';
                      }
                  } 
               })   
-            }
- 
+            } */
+                 
   //2/ cycle holder list send tokens and log data-------------------------------------------------------------------
             holders.reduce(async(memo, holder) =>{
               await memo;
               counter ++;
+            //switch the test line in for holder line to send tokens to your self for each holder to test code before sending to holders
+              //await send(test, counter);
               await send(holder, counter);
               },undefined)
 
