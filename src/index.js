@@ -3,7 +3,7 @@ const xrpl = require('xrpl');
 //import module2
 const send = require('./send')
 
-const {requiredHoldings,checkIssuer1,checkIssuer2,ignoreWallet} = require('../config.json')          
+const {requiredHoldings,checkIssuer1,checkIssuer2,ignoreWallet} = require('../config.json')     
 
 //signal issure check 1 is done
 let run1 = false;
@@ -14,8 +14,8 @@ holders = [];
 //count outputs
 let counter = 0;
 
-//use this for test sending tokens to self instead of holder list
-let test = 'your own address';
+//your own address for sending to self in test run
+let test = 'rHuotrncXBzH72ziyYBM19UxzoFpsqGF6C';
 
 // Wrap code in an async function so we can use await-------------------------------------------
            async function main() {
@@ -30,14 +30,14 @@ let test = 'your own address';
            const response1 = await client.request({
                "id": 2,
                "command": "account_lines",
-               // imput the issuer your want to check for trustlines // use collection issuer for xls14 nfts
+               // imput the issuer your want to check for trustlines
                "account": checkIssuer1,
                "ledger_index": "validated"
              })
                //filter trust lines
                response1.result.lines.forEach((line) =>{
-                // instead of 0 put in the number of tokens you want to require user to have / if doing xls14 nfts leave 0
-                if (line.balance * -1 > requiredHoldings ){
+                // instead of 0 put in the number of tokens you want to require user to have // if doning nfts xls14 leave 0
+                if (line.balance * -1 > requiredHoldings){
                    //exclude your holding wallet
                     if (line.account != ignoreWallet){
                    //builds holder list
@@ -51,8 +51,7 @@ let test = 'your own address';
            
              
   //2/ check a diff issuer and add to holder list-------------------------------------------------------------------
-           //un comment this code if you want check more than one issuer. Most like used for xls14 nfts
-              /*      if(run1){
+        /*     if(run1){
              const response2 = await client.request({
                 "id": 2,
                 "command": "account_lines",
@@ -69,20 +68,27 @@ let test = 'your own address';
                      }
                  } 
               })   
-            } */
-                 
+            } 
+  */
   //2/ cycle holder list send tokens and log data-------------------------------------------------------------------
             holders.reduce(async(memo, holder) =>{
               await memo;
               counter ++;
-            //switch the test line in for holder line to send tokens to your self for each holder to test code before sending to holders
-              //await send(test, counter);
-              await send(holder, counter);
+              await send(test, counter);
+              //await send(holder, counter);
               },undefined)
 
            client.disconnect()
                              
             }; 
+           
+          
+          
+           main()
+             
+
+         
+
            
           
           
