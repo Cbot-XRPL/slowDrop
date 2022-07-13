@@ -1,5 +1,7 @@
 {
     "seed": "put you sending wallet seed here",
     "currency": "currency code of sending token here",
-    "issuer": "issuer address of transfer currency here"
+    "issuer": "issuer address of transfer currency here",
+    "sendingAmount":"0.001",
+    "sendingMemo":"😈 slowDrop !?!"
 }
