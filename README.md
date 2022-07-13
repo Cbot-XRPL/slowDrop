@@ -14,7 +14,7 @@ run "npm install" in terminal
 
 add your send wallet seed in config.json file
 
-add the currency code your sending and issuer address of token your are sending in config.json
+add the currency code and issuer address of token your are sending in config.json
 
 
 
