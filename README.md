@@ -6,27 +6,33 @@ ____________________________________________________________________________
 
 ## Instructions
 
-download project file
+1. Download project file.
 
-open in a code editor 
+2. Open in a code editor. 
 
-run "npm install" in terminal
+3. Run "npm install" in terminal.
 
-add your send wallet seed in config.json file
+4. Go to the config.json file.
+-add seed of wallet you are sending from
+-add the currency code and issuing address of token you are sending
+-add the amount of your tokens you want to require holders to have
+-add the issuer addresses of the tokens you want to scan for holders
+-add the holding wallet you want to ingnore 
+-add the amount you want to send 
+-add the memo you want on the aridrop tx
 
-add the currency code and issuer address of token your are sending in config.json
+5. at the bottem of the index.js file in the section that cycles the holder list there is commented out line look like this...
+  //test----------------
+        await send(test, counter);
+  //airdrop-------------
+      //await send(holder, counter);
+   when you run the program it will send a airdrop to you test(ignorewallet) for each holder in your array as a test.
+   For the program to drop to the actual holder list you will need to comment out the test line and un comment the holder like.
+ 
 
-go into the index.js file and sub in your issuing address of token you want to check for where it is notated
+6. Read all the files notes to learn workings of the program
 
-in the index.js file sub in the qauntity you want user to hold where it is notated
-
-Go into the send.js file sub in memo you want where it is notated
-
-Go into the send.js sub in amount you want to send to each holder where it is notated
-
-Read all the files notes to learn workings of the program
-
-to run the program type "npm start" in the terminal
+7. to run the program type "npm start" in the terminal
 
 
 
