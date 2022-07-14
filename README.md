@@ -22,7 +22,7 @@ ____________________________________________________________________________
 ##### -add the memo you want on the aridrop tx
 
 #### 5. set test or airdrop
-at the bottem of the index.js file in the section that cycles the holder list there is two lines test and airdrop. When you run the program it will send a airdrop to you test(ignorewallet) for each holder in your array as a test. For the program to drop to the actual holder list you will need to comment out the test line and un comment the holder like.
+##### At the bottem of the index.js file in the section that cycles the holder list there is two lines test and airdrop. When you run the program it will send a airdrop to you test(ignorewallet) for each holder in your array as a test. For the program to drop to the actual holder list you will need to comment out the test line and un comment the holder like.
  
 
 #### 6. Read all the files notes to learn workings of the program
