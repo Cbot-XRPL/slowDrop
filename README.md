@@ -1,5 +1,5 @@
 
-# Node.js airDrop
+# Node.js slowDrop Tool
 an xrpl airdrop tool built with javascript and node.js
 
 ____________________________________________________________________________
