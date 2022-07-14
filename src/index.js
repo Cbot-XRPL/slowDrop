@@ -15,7 +15,7 @@ holders = [];
 let counter = 0;
 
 //your own address for sending to self in test run
-let test = 'rHuotrncXBzH72ziyYBM19UxzoFpsqGF6C';
+let test = ignoreWallet;
 
 // Wrap code in an async function so we can use await-------------------------------------------
            async function main() {
