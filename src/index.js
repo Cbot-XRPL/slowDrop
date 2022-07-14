@@ -76,6 +76,7 @@ let test = ignoreWallet;
               counter ++;
                        
        //3/test---------------------------------
+                   console.log(holder)
                    await send(test, counter);
       //3/airdrop-------------------------------
                    //await send(holder, counter);
