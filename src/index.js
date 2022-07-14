@@ -74,8 +74,12 @@ let test = ignoreWallet;
             holders.reduce(async(memo, holder) =>{
               await memo;
               counter ++;
-              await send(test, counter);
-              //await send(holder, counter);
+                       
+       //3/test---------------------------------
+                   await send(test, counter);
+      //3/airdrop-------------------------------
+                   //await send(holder, counter);
+                       
               },undefined)
 
            client.disconnect()
