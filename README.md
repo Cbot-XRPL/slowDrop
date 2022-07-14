@@ -19,7 +19,7 @@ ____________________________________________________________________________
 ##### -add the currency code and issuing address of token you are sending
 ##### -add the amount of your tokens you want to require holders to have
 ##### -add the issuer addresses of the tokens you want to scan for holders
-##### -add the holding wallet you want to ingnore 
+##### -add the holding wallet you want to ingnore FYI this doubles as test wallet to send practice drops to
 ##### -add the amount you want to send 
 ##### -add the memo you want on the aridrop tx
 
