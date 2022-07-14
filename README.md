@@ -6,13 +6,13 @@ ____________________________________________________________________________
 
 ## Instructions
 
-1. Download project file.
+#### 1. Download project file.
 
-2. Open in a code editor. 
+#### 2. Open in a code editor. 
 
-3. Run "npm install" in terminal.
+#### 3. Run "npm install" in terminal.
 
-4. Go to the config.json file.
+#### 4. Go to the config.json file.
 -add seed of wallet you are sending from
 -add the currency code and issuing address of token you are sending
 -add the amount of your tokens you want to require holders to have
@@ -21,12 +21,13 @@ ____________________________________________________________________________
 -add the amount you want to send 
 -add the memo you want on the aridrop tx
 
-5. at the bottem of the index.js file in the section that cycles the holder list there is two lines test and airdrop. When you run the program it will send a airdrop to you test(ignorewallet) for each holder in your array as a test. For the program to drop to the actual holder list you will need to comment out the test line and un comment the holder like.
+#### 5. set test or airdrop
+at the bottem of the index.js file in the section that cycles the holder list there is two lines test and airdrop. When you run the program it will send a airdrop to you test(ignorewallet) for each holder in your array as a test. For the program to drop to the actual holder list you will need to comment out the test line and un comment the holder like.
  
 
-6. Read all the files notes to learn workings of the program
+#### 6. Read all the files notes to learn workings of the program
 
-7. to run the program type "npm start" in the terminal
+#### 7. to run the program type "npm start" in the terminal
 
 
 
