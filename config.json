@@ -2,7 +2,7 @@
     "seed": "put you sending wallet seed here",
     "currency": "currency code of sending token here",
     "issuer": "issuer address of transfer currency here",
-    "requiredHoldings": 0,
+    "requiredHoldings": 1,
     "checkIssuer1":"your issuing account",
     "checkIssuer2":"your issuing account 2 if you want to check 2",
     "ignoreWallet":"your holding acccount",
