@@ -40,7 +40,7 @@ let test = ignoreWallet;
                    //exclude your holding wallet
                     if (line.account != ignoreWallet){
                    //builds holder list
-                    holders.push(line.account) 
+                    holders.push(line) 
                     
                     }   
                 }
