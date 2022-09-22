@@ -14,7 +14,7 @@ holders = [];
 //count outputs
 let counter = 0;
 
-let test = ignoreWallet;
+let test = {account:ignoreWallet};
 
 // Wrap code in an async function so we can use await-------------------------------------------
            async function main() {
