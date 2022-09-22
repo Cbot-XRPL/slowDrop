@@ -14,7 +14,7 @@ let logCounter = 0;
 //holder counter
 holders = [];
 //test account
-let test = ignoreWallet;
+let test = {account:ignoreWallet};
 
 
 
