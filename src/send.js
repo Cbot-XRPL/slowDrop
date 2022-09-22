@@ -33,7 +33,7 @@ const send = async (user, counter) => {
         //airdrop amount per user
         "value": sendingAmount
       },
-      "Destination": user,
+      "Destination": user.account,
       "Memos": [
         {
           "Memo": {
@@ -65,7 +65,7 @@ const send = async (user, counter) => {
    
 
 // Log users // catch errors -------------------------------------------------
-  logUser(user, tx.result.meta.TransactionResult, sequence, onChain) 
+  logUser(user.account, tx.result.meta.TransactionResult, sequence, onChain) 
   
 client.disconnect()
     
