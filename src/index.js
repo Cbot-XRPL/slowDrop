@@ -49,7 +49,7 @@ const getMarker = async (marker) => {
                 //builds holder list
                 logCounter++
                 console.log(`holder ${logCounter} pushed to array`);
-                 holders.push(line) 
+                 holders.push(line.account) 
                  }   
            
         }
