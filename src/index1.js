@@ -40,7 +40,7 @@ let test = {account:ignoreWallet};
                    //exclude your holding wallet
                     if (line.account != ignoreWallet){
                    //builds holder list
-                    holders.push(line.account) 
+                    holders.push(line) 
                     
                     }   
                 }
@@ -62,7 +62,7 @@ let test = {account:ignoreWallet};
               response2.result.lines.forEach( line =>{
                  if (line.balance * -1 > requiredHoldings ){
                      if (line.account != ignoreWallet){
-                     holders.push(line.account);
+                     holders.push(line);
                     
                      }
                  } 
