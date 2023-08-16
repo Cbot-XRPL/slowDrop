@@ -31,7 +31,7 @@ ____________________________________________________________________________
 
 #### 7. Read all the files notes to learn workings of the program
 
-#### 8. Type "npm start" to run program for tokens or "npm run xls14" for nfts
+#### 8. In console type "npm start" to run program for holder token drop -- "npm run custom" for token drop to custom user list -- "npm run xls14" for old style nfts
 
 
 ____________________________________________________________________________
