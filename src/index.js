@@ -1,7 +1,7 @@
 //IMPORT XRPL MODULE BY  npm install xrpl -----------------------------------------------------------------------
 const xrpl = require('xrpl'); 
 //IMPORT ISSUER AND AMOUNT OF TOKENS TO CHECK FOR -----------------------------------------------------------------------
-const {requiredHoldings,checkIssuer1,checkIssuer2,ignoreWallet} = require('../config.json')  
+const {requiredHoldings,checkIssuer1,checkIssuer2,ignoreWallet,ignoreWallet2,ignoreWallet3} = require('../config.json')  
 //import module2
 const send = require('./send')
 
@@ -15,6 +15,8 @@ let logCounter = 0;
 holders = [];
 //test account
 let test = {account:ignoreWallet};
+
+
 
 
 
@@ -45,10 +47,10 @@ const getMarker = async (marker) => {
                       //how many tokens each wallet has -----------------------------------------------------------------------
         if (line.balance * -1 >= requiredHoldings) {
             
-            if (line.account != ignoreWallet){
+            if (line.account != ignoreWallet && line.account != ignoreWallet2 && line.account != ignoreWallet3){
                 //builds holder list
                 logCounter++
-                console.log(`holder ${logCounter} pushed to array`);
+                //console.log(`holder ${logCounter} pushed to array`);
                  holders.push(line) 
                  }   
            
@@ -78,17 +80,21 @@ const recursive = async ( marker) => {
 
 
 //2/ cycle holder list send tokens and log data-------------------------------------------------------------------
+
 holders.reduce(async(memo, holder) =>{
     await memo;
     counter ++;
     
 
 //3/holder list---------------------------------
-         //console.log(holder, counter)
+let test = Number(holder.balance)
+
+
+          console.log(holder.account, (test.toFixed(2)*-1), `counter :${counter}`)
 //3/test---------------------------------
-        await send(test, counter);
+         //await send(test, counter);
 //3/airdrop-------------------------------
-         //await send(holder, counter);
+        // await send(holder, counter);
 
     },undefined)
 

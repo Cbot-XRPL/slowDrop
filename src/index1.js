@@ -62,7 +62,7 @@ let test = {account:ignoreWallet};
               response2.result.lines.forEach( line =>{
                  if (line.balance * -1 > requiredHoldings ){
                      if (line.account != ignoreWallet){
-                     holders.push(line);
+                     holders.push(line.account);
                     
                      }
                  } 
@@ -75,7 +75,7 @@ let test = {account:ignoreWallet};
               counter ++;
 
       //3/holder list---------------------------------
-                   console.log(holder, counter)
+                  // console.log(holder , counter)
       //3/test---------------------------------
                   //await send(test, counter);
       //3/airdrop-------------------------------

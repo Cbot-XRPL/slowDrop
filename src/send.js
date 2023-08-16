@@ -18,6 +18,13 @@ const memo = Buffer.from(sendingMemo).toString('hex').toUpperCase()
 
 // Wrap code in an async function so we can use await-------------------------------------------
 const send = async (user, counter) => {
+
+// Prep custom sending amount--------------------------------------------------------------------
+
+ //let preparedAmount = await user.balance * -0.1
+ 
+ 
+
                   
 // Define the network client--------------------------------------------------------------------
     const client = new xrpl.Client("wss://xrplcluster.com/")
@@ -30,7 +37,7 @@ const send = async (user, counter) => {
       "Amount": {
         "currency": currency,
         "issuer": issuer,
-        //airdrop amount per user
+        //airdrop amount per user  based on user holdings--->preparedAmount.toFixed(3)
         "value": sendingAmount
       },
       "Destination": user.account,

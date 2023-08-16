@@ -8,7 +8,7 @@ const fs = require('fs');
 const logUser = (user,result,sequence, onChain) => {
 
   // read the database file
-  fs.readFile('./users.json', 'utf8', (err, data) => {
+  fs.readFile('../users.json', 'utf8', (err, data) => {
 
     if (err) {
         console.log(`Error reading file from disk: ${err}`);
@@ -32,7 +32,7 @@ const logUser = (user,result,sequence, onChain) => {
              
 
             // write data back to the file in json
-            fs.writeFile('./users.json', JSON.stringify(database, null, 4), (err) => {
+            fs.writeFile('../users.json', JSON.stringify(database, null, 4), (err) => {
                 console.log(`Logged to user.json : ${user}`);
             if (err) {
                 console.log(`Error writing file: ${err}`);
