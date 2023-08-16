@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./src/index.js",
-     "xls14": "node ./src/index1.js"
+     "xls14": "node ./src/index1.js",
+     "custom": "node ./src/index2.js",
+    
   },
   "author": "Cbot Labs Inc",
   "license": "ISC",
