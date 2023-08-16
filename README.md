@@ -24,13 +24,14 @@ ____________________________________________________________________________
 ##### -add the amount you want to send 
 ##### -add the memo you want on the aridrop tx
 
-#### 5. set test or airdrop (use index.js for tokens and index1.js for nfts)
+#### 5. set test or airdrop (use index.js for tokens -- index1.js for nfts -- index2.js for drops to custom user list)
 ##### At the bottem of the index.js file in the section that cycles the holder list there is two lines test and airdrop. When you run the program it will console log the holders addresses and it will send a airdrop to your test(ignorewallet) for each holder in your holder array as a test. For the program to drop to the actual holder list you will need to comment out the test lines and un comment the airdrop line.
- 
 
-#### 6. Read all the files notes to learn workings of the program
+#### 6. For custom drop list use the airdrop list json file to add your users to drop to
 
-#### 7. Type "npm start" to run program for tokens or "npm run xls14" for nfts
+#### 7. Read all the files notes to learn workings of the program
+
+#### 8. Type "npm start" to run program for tokens or "npm run xls14" for nfts
 
 
 ____________________________________________________________________________
