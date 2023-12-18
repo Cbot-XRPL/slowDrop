@@ -2,7 +2,7 @@
 # Node.js slowDrop Tool
 An xrpl airdrop tool built with javascript and node.js
 
-Carefully scan your holders and drop tokens to them while logging a on ledger confirmation of each outgoing transaction.
+ This tool carefully scan your holders and drop tokens to them while logging a on ledger confirmation of each outgoing transaction.
 
 ____________________________________________________________________________
 
